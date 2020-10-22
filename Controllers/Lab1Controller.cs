@@ -5,6 +5,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using project.Models;
 using project.Storage;
+using Serilog;
 
 namespace project.Controllers
 {
@@ -22,6 +23,7 @@ namespace project.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Lab1Data>> Get()
         {
+            Log.Information("View all models");
             return Ok(_memCache.All);
         }
 
@@ -41,6 +43,8 @@ namespace project.Controllers
             if (!validationResult.IsValid) return BadRequest(validationResult.Errors);
 
             _memCache.Add(value);
+
+            Log.Information($"New model added {value.ToString()}");
 
             return Ok($"{value.ToString()} has been added");
         }
