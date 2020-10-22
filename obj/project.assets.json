@@ -12032,7 +12032,7 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "serilog >= 2.10.0",
-      "serilog.sinks.console",
+      "serilog.sinks.console >= 3.1.1",
       "serilog.sinks.file >= 4.1.0"
     ]
   },
@@ -12103,7 +12103,7 @@
           },
           "serilog.sinks.console": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[3.1.1, )"
           },
           "serilog.sinks.file": {
             "target": "Package",
